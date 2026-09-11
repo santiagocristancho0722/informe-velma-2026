@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asistente digital Velma · Enero–agosto 2026 · GHL Hoteles</title>
+<style>
+:root{--navy:#023859;--deepsea:#2A5E95;--blueblood:#6399BA;--gray:#808080;--glossy:#D1D1D1;
+ --pos:#74AD52;--neg:#D72D41;--neu:#FFC75F;--soft:#F6F8FA}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Elms Sans","Inter","Segoe UI",Helvetica,Arial,sans-serif;background:#fff;
+ color:#1b1b1b;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px 56px}
+header.cover{background:var(--navy);color:#fff;padding:48px 0 40px;margin-bottom:44px}
+header.cover .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--blueblood);font-weight:600}
+h1{font-size:33px;font-weight:600;line-height:1.22;margin:14px 0 12px;letter-spacing:-.01em}
+.sub{font-size:15.5px;color:#cfe0ea}
+.metaline{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);
+ display:flex;flex-wrap:wrap;gap:56px;font-size:13px;color:#b9d0dd}
+.metaline b{display:block;color:#fff;font-weight:600;font-size:15px;margin-top:2px}
+section{margin-bottom:48px}
+h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blueblood);font-weight:600;margin-bottom:8px}
+h3{font-size:23px;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:12px;letter-spacing:-.01em}
+p.lead{font-size:15.5px;color:#3a3a3a}
+p.note{font-size:13px;color:var(--gray);margin-top:12px}
+.rule{height:2px;background:var(--navy);width:46px;margin-bottom:20px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:24px 0 4px}
+.kpis.k4{grid-template-columns:repeat(4,1fr)}
+.kpis.k3{grid-template-columns:repeat(3,1fr)}
+.kpis.k2{grid-template-columns:repeat(2,1fr)}
+.grouplbl{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--deepsea);
+ font-weight:700;margin:24px 0 2px;display:flex;align-items:center;gap:9px}
+.grouplbl:before{content:"";width:16px;height:2px;background:var(--blueblood);flex:none}
+.kpi{border:1px solid var(--glossy);border-radius:4px;padding:18px 16px;background:#fff}
+.kpi .n{font-size:27px;font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--gray);margin-top:7px;line-height:1.35}
+.kpi.accent{background:var(--navy);border-color:var(--navy)}
+.kpi.accent .n{color:#fff}.kpi.accent .l{color:#b9d0dd}
+.callout{border-left:4px solid var(--navy);background:var(--soft);padding:20px 24px;border-radius:0 4px 4px 0;margin-top:22px}
+.callout.watch{border-left-color:var(--neu);background:#FFFBF3;padding:16px 20px;margin-top:16px}
+.callout.watch p{font-size:13.5px;color:#444;line-height:1.6}
+.tsearch{display:flex;align-items:center;gap:12px;margin:18px 0 6px;flex-wrap:wrap}
+.tsearch input{font-family:inherit;font-size:13px;padding:8px 12px;border:1px solid var(--glossy);
+ border-radius:4px;width:280px;color:#1b1b1b;background:#fff}
+.tsearch input:focus{outline:0;border-color:var(--blueblood)}
+.tsearch .cnt{font-size:12px;color:var(--gray)}
+.tsearch .hint{font-size:12px;color:var(--gray);margin-left:auto}
+thead th.sortable{cursor:pointer;-webkit-user-select:none;user-select:none}
+thead th.sortable:after{content:"\2195";opacity:.4;margin-left:6px;font-size:10px}
+thead th.sortable.asc:after{content:"\2191";opacity:1}
+thead th.sortable.desc:after{content:"\2193";opacity:1}
+.callout p{font-size:14.5px;color:#333}
+.callout p+p{margin-top:10px}
+.callout b{color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:18px}
+thead th{background:var(--navy);color:#fff;font-weight:600;text-align:right;padding:11px 12px;
+ font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+thead th:first-child{text-align:left}
+tbody td{padding:9px 12px;border-bottom:1px solid #EDEFF1;text-align:right;
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody td:first-child{text-align:left;white-space:normal}
+tbody tr:nth-child(even){background:#FAFBFC}
+tbody tr.top5{background:#EEF4F8}
+tbody tr.top5 td{font-weight:600;color:var(--navy)}
+tbody tr.totrow{background:#fff;border-top:2px solid var(--navy)}
+tbody tr.totrow td{font-weight:600;color:var(--navy);border-bottom:none;padding-top:12px}
+.rank{display:inline-block;width:20px;color:var(--gray);font-weight:600}
+tbody tr.top5 .rank{color:var(--blueblood)}
+.tblwrap{overflow-x:auto;border:1px solid var(--glossy);border-radius:4px;padding:0 2px 2px}
+.bleed{width:100vw;margin-left:calc(50% - 50vw);padding:0 32px;border:0;border-radius:0}
+.bleed table{border:1px solid var(--glossy);border-radius:4px;border-collapse:separate;border-spacing:0}
+.bleed thead th{border-bottom:0}
+.scrollY{max-height:500px;overflow-y:auto}
+.scrollY thead th{position:sticky;top:0;z-index:2}
+.stickyhead{overflow:visible}
+.stickyhead thead th{position:sticky;top:0;z-index:6}
+.toggle{display:inline-flex;border:1px solid var(--glossy);border-radius:4px;overflow:hidden;margin:18px 0 4px}
+.toggle button{font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 18px;border:0;
+ background:#fff;color:var(--deepsea);cursor:pointer}
+.toggle button.on{background:var(--navy);color:#fff}
+td.heat{color:#12324a;font-weight:500}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.card{border:1px solid var(--glossy);border-radius:4px;padding:16px 14px}
+.card.hi{border-color:var(--blueblood);background:var(--soft)}
+.card .tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);font-weight:600}
+.card .nm{font-size:15px;font-weight:600;color:var(--navy);margin:8px 0 10px;line-height:1.3}
+.card .d{font-size:12.5px;color:#555;line-height:1.85}
+.card .d b{color:var(--navy)}
+.card ul.mini{list-style:none;margin:10px 0 0}
+.card ul.mini li{position:relative;padding:5px 0 5px 16px;font-size:12.5px;color:#555;line-height:1.5}
+.card ul.mini li:before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;
+ border-radius:50%;background:var(--blueblood)}
+.card .res{margin-top:12px;padding-top:10px;border-top:1px solid var(--glossy);font-size:12.5px;color:#555}
+.card .res b{color:var(--navy)}
+.card .res span{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--gray);font-weight:700;margin-bottom:4px}
+tbody td.d-pos{color:var(--pos);font-weight:600}
+thead th.sticky{position:sticky;right:0;background:var(--navy);z-index:3}
+tbody td.sticky{position:sticky;right:0;background:#fff;font-weight:600;color:var(--pos);
+ box-shadow:-7px 0 9px -7px rgba(0,0,0,.12)}
+tbody tr:nth-child(even) td.sticky{background:#FAFBFC}
+tbody tr.top5 td.sticky{background:#FFF6E5;color:var(--navy);border-left:3px solid var(--neu)}
+tbody tr.totrow td.sticky{background:#fff;color:var(--navy)}
+tbody td.sticky.neg{background:#FCEEF0;color:var(--neg);border-left:3px solid var(--neg)}
+tbody td .isub{display:block;font-size:12px;font-weight:400;color:var(--gray);margin-top:3px;line-height:1.4}
+tbody td.d-neu{color:var(--gray);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{border:1px solid var(--glossy);border-left:3px solid var(--blueblood);border-radius:3px;
+ padding:10px 16px;font-size:13.5px;font-weight:600;color:var(--navy);background:var(--soft)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.crit{display:grid;grid-template-columns:repeat(3,1fr);gap:0 22px;margin-top:12px}
+.crit div{padding:12px 0 14px;border-top:1px solid var(--glossy)}
+.crit .num{font-size:11px;font-weight:700;color:var(--blueblood);letter-spacing:.08em;display:block;margin-bottom:5px}
+.crit .txt{font-size:13.5px;color:var(--navy);font-weight:600;line-height:1.4}
+.evo{border:1px solid var(--glossy);border-radius:4px;padding:22px 24px;margin-top:16px}
+.evo .step{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--blueblood);font-weight:700}
+.evo h4{font-size:18px;font-weight:600;color:var(--navy);margin:7px 0 10px;letter-spacing:-.01em}
+.evo p{font-size:14.5px;color:#3a3a3a}
+.evo p.small{font-size:13px;color:var(--gray);margin-top:14px}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.shots figure{border:1px solid var(--glossy);border-radius:4px;overflow:hidden;background:#fff}
+.shots img{width:100%;display:block}
+.shots figcaption{font-size:11.5px;color:var(--deepsea);font-weight:600;padding:9px 11px;
+ background:var(--soft);border-top:1px solid var(--glossy)}
+@media(max-width:980px){.shots{grid-template-columns:repeat(2,1fr)}}
+footer{border-top:1px solid var(--glossy);padding:22px 0 0;font-size:12px;color:var(--gray)}
+@media(max-width:980px){.bleed{padding:0 18px}.kpis,.kpis.k4,.kpis.k3,.kpis.k2,.cards{grid-template-columns:repeat(2,1fr)}
+ .grid2,.grid3{grid-template-columns:1fr}
+ h1{font-size:25px}.wrap{padding:0 18px 44px}}
+@media print{.toggle{display:none}.scrollY{max-height:none}}
+
+header.cover{margin-bottom:0}
+.tabs{border-bottom:1px solid var(--glossy);position:sticky;top:0;background:#fff;z-index:20;margin-bottom:38px}
+.tabs .wrap{padding:0 32px;display:flex;gap:2px;overflow-x:auto;justify-content:center}
+.tabs button{font-family:inherit;font-size:13px;font-weight:600;color:var(--gray);background:none;
+ border:0;border-bottom:2px solid transparent;padding:15px 20px;cursor:pointer;white-space:nowrap;
+ letter-spacing:.01em;line-height:20px}
+.stickyhead thead th{top:51px}
+.tabs button:hover{color:var(--deepsea)}
+.tabs button.on{color:var(--navy);border-bottom-color:var(--navy)}
+.panel{display:none}
+.panel.on{display:block}
+@media(max-width:980px){.tabs .wrap{padding:0 18px;justify-content:flex-start}.tabs button{padding:13px 14px;font-size:12.5px}}
+@media print{.tabs{display:none}.panel{display:block!important}}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Dirección de Mercadeo · Agencia Digital</div>
+    <h1>¿Qué aporta hoy Velma (Chatbot) a los 42 hoteles del portafolio?</h1>
+    <p class="sub">Atención de huéspedes, reserva directa y captura de información comercial.
+    Resultados de 2026 a la fecha, comparados con el mismo período de 2025.</p>
+    <div class="metaline">
+      <div>Alcance<b>42 hoteles · 5 países</b></div>
+      <div>Período<b>1 de enero – 8 de septiembre de 2026</b></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs"><div class="wrap"><button class="on" data-p="p0">Resultados del período</button><button class="" data-p="p1">Desempeño por hotel</button><button class="" data-p="p2">Volumen de demanda</button><button class="" data-p="p3">Evolución en curso</button></div></nav>
+<div class="wrap">
+
+<div class="panel on" id="p0">
+<section>
+  <h2>Cifras del período</h2><div class="rule"></div>
+  <div class="kpis">
+    <div class="kpi"><div class="n">32.028</div><div class="l">Conversaciones atendidas</div></div>
+    <div class="kpi"><div class="n">12.199</div><div class="l">Cotizaciones de alojamiento generadas</div></div>
+    <div class="kpi"><div class="n">609</div><div class="l">Reservas confirmadas</div></div>
+    <div class="kpi"><div class="n">1.460</div><div class="l">Número de noches confirmadas (RN)</div></div>
+    <div class="kpi accent"><div class="n">$253.731 USD</div><div class="l">Ingreso confirmado</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Autonomía de Velma</h2><div class="rule"></div>
+  <h3>577 de las 609 cotizaciones confirmadas se cerraron sin intervención humana</h3>
+  <p class="lead">El <b>94,7 %</b> de las cotizaciones confirmadas en el período las cerró Velma por sí
+  misma, de principio a fin. Las 32 restantes se cerraron con seguimiento comercial del hotel sobre la
+  información que Velma había capturado. En la atención ocurre lo mismo: el <b>87 %</b> de los temas
+  consultados se resolvió dentro del chatbot, sin llegar a recepción ni a reservas.</p>
+  <div class="kpis k2">
+    <div class="kpi"><div class="n">577</div><div class="l">Cotizaciones confirmadas de forma autónoma</div></div>
+    <div class="kpi"><div class="n">32</div><div class="l">Cotizaciones confirmadas con seguimiento comercial</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Evolución frente a 2025</h2><div class="rule"></div>
+  <h3>La herramienta rinde más este año que el anterior</h3>
+  <p class="lead">Mismo período, mismo alcance. Velma convierte mejor, escala menos consultas al hotel
+  y entrega una base de contactos más aprovechable que hace un año.</p>
+  <div class="tsearch">
+    <input id="q_cmp" type="text" placeholder="Buscar indicador…">
+    <span class="cnt" id="c_cmp"></span>
+    <span class="hint">Haz clic en cualquier columna para ordenarla</span>
+  </div>
+  <div class="tblwrap"><table id="tbl_cmp"></table></div>
+  <p class="note">El ingreso confirmado se mantuvo estable atendiendo una cuarta parte menos de solicitudes:
+  la mejora en la tasa de conversión y en el ticket promedio de la reserva —de $382 USD a $417 USD— compensó
+  el menor volumen de entrada.</p>
+</section>
+</div>
+
+<div class="panel " id="p1">
+<section>
+  <h2>Desempeño por hotel</h2><div class="rule"></div>
+  <h3>Cinco hoteles concentran el 53 % del ingreso confirmado</h3>
+  <p class="lead">Estos son los cinco hoteles que más ingreso confirmado generaron a través de Velma
+  durante el período. Entre los cinco reúnen el 53 % del total del portafolio, y GHL Sunrise San Andrés
+  aporta por sí solo una cuarta parte.</p>
+  <div class="cards" id="top5"></div>
+  <p class="lead" style="margin-top:26px">La tabla lista las 42 propiedades en orden descendente por
+  ingreso confirmado. Velma tiene un costo de <b>$79 USD mensuales por hotel</b>, que en el período
+  suman $26.544 USD en todo el portafolio frente a los $253.731 USD confirmados a través del canal.</p>
+  <div class="tsearch">
+    <input id="q_rank" type="text" placeholder="Buscar hotel…">
+    <span class="cnt" id="c_rank"></span>
+    <span class="hint">Haz clic en cualquier columna para ordenarla</span>
+  </div>
+  <div class="tblwrap stickyhead"><table id="tbl_rank"></table></div>
+  <p class="note">Número de noches (RN) = noches × habitaciones de cada confirmación de alojamiento.</p>
+  <div class="callout watch">
+    <p><b>Ocho propiedades cierran el período con un aporte marginal del canal</b> y ya están mapeadas y
+    en análisis: Abadía Plaza Risaralda, Tequendama Bogotá, Sonesta Loja, Collection Hamilton, San Lázaro
+    Cartagena, Style Barrancabermeja, y Posadas del Inca Puno y Yucay, estas dos últimas sin ninguna
+    confirmación en el período. Para cada una se revisa si hay margen de maniobra por la vía del
+    contenido, los diálogos y la captación de cotizaciones; donde el canal no resulte determinante para
+    esa propiedad, se evaluará limitarlo.</p>
+  </div>
+</section>
+</div>
+
+<div class="panel " id="p2">
+<section>
+  <h2>Volumen de demanda</h2><div class="rule"></div>
+  <h3>Velma sostiene 1.525 cotizaciones de alojamiento al mes en todo el portafolio</h3>
+  <p class="lead">Cada hotel atiende en promedio <b>95 conversaciones al mes</b> sobre temas de todo
+  tipo, y <b>36 de ellas</b> terminan en una cotización de alojamiento. El flujo se mantiene estable a
+  lo largo del año, sin caídas estacionales relevantes.</p>
+  <p class="grouplbl">Promedio mensual por hotel</p>
+  <div class="kpis k2">
+    <div class="kpi"><div class="n">95</div><div class="l">Conversaciones</div></div>
+    <div class="kpi"><div class="n">36</div><div class="l">Cotizaciones de alojamiento</div></div>
+  </div>
+  <p class="grouplbl">Promedio semanal por hotel</p>
+  <div class="kpis k2">
+    <div class="kpi"><div class="n">21</div><div class="l">Conversaciones</div></div>
+    <div class="kpi"><div class="n">8</div><div class="l">Cotizaciones de alojamiento</div></div>
+  </div>
+  <p class="note">Promedios del portafolio: 32.028 conversaciones y 12.199 cotizaciones repartidas entre
+  42 hoteles y los ocho meses del período.</p>
+  <div class="toggle" id="tg">
+    <button class="on" data-v="cot">Cotizaciones</button>
+    <button data-v="conv">Conversaciones</button>
+  </div>
+  <div class="tsearch">
+    <input id="q_vol" type="text" placeholder="Buscar hotel…">
+    <span class="cnt" id="c_vol"></span>
+    <span class="hint">Haz clic en cualquier columna para ordenarla</span>
+  </div>
+  <div class="tblwrap scrollY"><table id="tbl_vol"></table></div>
+  <p class="note" id="volnote"></p>
+</section>
+</div>
+
+<div class="panel " id="p3">
+<section>
+  <h2>Información comercial capturada</h2><div class="rule"></div>
+  <h3>Cada conversación deja un contacto con intención de viaje declarada</h3>
+  <p class="lead">Además de asistir al huésped, Velma recopila de forma orgánica nombre, correo,
+  teléfono, hotel de interés, fechas y número de huéspedes. Es una base propia, sin costo de captación,
+  con <b>34 días de margen</b> para trabajarla antes de la fecha de llegada.</p>
+  <div class="kpis k3">
+    <div class="kpi"><div class="n">11.733</div><div class="l">Correos electrónicos únicos capturados</div></div>
+    <div class="kpi"><div class="n">8.612</div><div class="l">Contactos con autorización explícita de contacto</div></div>
+    <div class="kpi"><div class="n">4.121</div><div class="l">Contactos con número telefónico</div></div>
+  </div>
+
+  <p class="grouplbl" style="margin-top:26px">Qué estamos haciendo con esa base</p>
+  <p class="lead" style="margin-top:14px">La base se trabaja hoy de dos formas, según la capacidad
+  comercial de cada propiedad. En ambos casos el hotel recibe algo que antes no tenía: la lista de quién
+  quiso reservar con él y no lo hizo.</p>
+  <div class="grid2">
+    <div class="card hi">
+      <div class="tag">Sonesta Pereira · desde junio de 2025</div>
+      <div class="nm">El hotel contacta una por una las cotizaciones</div>
+      <ul class="mini">
+        <li>Una persona del hotel revisa las cotizaciones que Velma genera cada día.</li>
+        <li>Contacta directamente a quien pidió la cotización y no la confirmó.</li>
+        <li>Acompaña la conversación hasta cerrar la reserva.</li>
+      </ul>
+      <div class="res"><span>Qué gana el hotel</span>Recupera ventas que se habrían perdido y las cierra
+      en canal directo, sin comisión de intermediarios. Cerró el período con <b>65 confirmaciones</b>, la
+      cifra más alta del portafolio, y aporta <b>16 de las 32</b> reservas que el portafolio cerró con
+      gestión comercial.</div>
+    </div>
+    <div class="card hi">
+      <div class="tag">GHL Style Bogotá Occidente y Yopal</div>
+      <div class="nm">Les entregamos la base ya depurada</div>
+      <ul class="mini">
+        <li>Extraemos los correos que Velma capturó en la página de cada hotel.</li>
+        <li>Los filtramos por dominio corporativo y por solicitudes de grupo.</li>
+        <li>El hotel recibe la lista lista para su propio acercamiento comercial.</li>
+      </ul>
+      <div class="res"><span>Qué gana el hotel</span>Recibe contactos <b>ya calificados y sin costo de
+      prospección</b>: empresas y grupos que consultaron por esa propiedad y dejaron sus datos. El equipo
+      comercial arranca sobre una lista de interesados reales, no sobre una base fría.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Evolución en curso</h2><div class="rule"></div>
+  <h3>Tres cambios activos en los hoteles tipo Luxury</h3>
+  <p class="lead">Los tres se implementaron sobre las mismas cuatro propiedades.</p>
+  <div class="chips">
+    <div class="chip">Park Lake Luxury</div>
+    <div class="chip">GHL Arsenal Hotel</div>
+    <div class="chip">GHL Armería Real Hotel and Spa</div>
+    <div class="chip">Makani Luxury Wanderlust</div>
+  </div>
+
+  <div class="evo">
+    <div class="step">Cambio 01</div>
+    <h4>Nuevo modelo de inteligencia artificial generativa</h4>
+    <p>Conversaciones más fluidas y cercanas, respuesta inmediata las 24 horas y en varios idiomas, sin
+    formularios de por medio. Deja de limitarse a entregar información: puede recomendar según lo que pide
+    el huésped, por ejemplo la ubicación de la habitación que mejor se ajusta a sus preferencias.</p>
+    <p class="grouplbl" style="margin-top:22px">Criterios con los que se evalúa este modelo</p>
+    <div class="crit">
+      <div><span class="num">01</span><span class="txt">Calidad de las respuestas</span></div>
+      <div><span class="num">02</span><span class="txt">Conversaciones que derivan en reserva</span></div>
+      <div><span class="num">03</span><span class="txt">Recomendaciones personalizadas al huésped</span></div>
+      <div><span class="num">04</span><span class="txt">Consistencia y precisión</span></div>
+      <div><span class="num">05</span><span class="txt">Varios temas en una misma conversación</span></div>
+      <div><span class="num">06</span><span class="txt">Oportunidades de mejora</span></div>
+    </div>
+    <p class="small">La evaluación toma como línea base el histórico de los últimos tres a seis meses y
+    cierra el 5 de octubre de 2026. Con los resultados consolidados se define la extensión al resto de
+    las propiedades.</p>
+  </div>
+
+  <div class="evo">
+    <div class="step">Cambio 02</div>
+    <h4>Nuevo widget de conversación</h4>
+    <p>Ícono más limpio y discreto, alineado con la estética de los hoteles tipo Luxury: disponible cuando
+    el huésped lo necesita, sin interrumpir la navegación ni tapar el contenido de la página.</p>
+    <div class="shots">
+      <figure><img alt="Widget de Velma en Park Lake Luxury" src="data:image/jpeg;base64,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"><figcaption>Park Lake Luxury</figcaption></figure>
+      <figure><img alt="Widget de Velma en GHL Arsenal Hotel" src="data:image/jpeg;base64,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"><figcaption>GHL Arsenal Hotel</figcaption></figure>
+      <figure><img alt="Widget de Velma en GHL Armería Real Hotel and Spa" src="data:image/jpeg;base64,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"><figcaption>GHL Armería Real Hotel and Spa</figcaption></figure>
+      <figure><img alt="Widget de Velma en Makani Luxury Wanderlust" src="data:image/jpeg;base64,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"><figcaption>Makani Luxury Wanderlust</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="evo">
+    <div class="step">Cambio 03</div>
+    <h4>Conversación sin correo obligatorio</h4>
+    <p>El huésped ya no necesita registrar su correo para conversar, lo que hace el intercambio más natural
+    desde el primer mensaje. El dato queda cuando él decide compartirlo, de modo que en estos cuatro
+    hoteles la captación es más selectiva y el acercamiento posterior se concentra en quienes mostraron
+    interés en dejarlo.</p>
+  </div>
+</section>
+</div>
+
+
+
+<footer>Elaborado por: Agencia Digital · Dirección de Mercadeo · Oficina Central GHL · Septiembre 2026</footer>
+</div>
+
+<script>
+const D = {"tot": {"conv": 32028, "cot": 12199, "conf": 609, "auto": 577, "staff": 32, "noches": 1460, "usdConf": 253731, "hoteles": 42, "meses": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago"], "emailsUnic": 11733, "optin": 8612, "tels": 4121, "ratioConv": 2.6255, "costoMes": 79, "costoPeriodo": 632, "cmp": [{"k": "Conversión de cotizaciones en confirmaciones de alojamiento", "sub": "Del total de cotizaciones generadas, cuántas terminaron en alojamiento confirmado.", "a": "4,2 %", "b": "5,0 %", "d": "0,8 pp", "dir": "up"}, {"k": "Diálogos de consulta resueltos sin escalar al hotel", "sub": "De los temas consultados, los que Velma resolvió sin pedir contacto con el hotel.", "a": "81 %", "b": "87 %", "d": "6 pp", "dir": "up"}, {"k": "Consultas sin respuesta de Velma", "sub": "Temas para los que el chatbot no encontró respuesta.", "a": "7 %", "b": "3 %", "d": "4 pp", "dir": "down"}, {"k": "Confirmaciones de alojamiento con seguimiento comercial", "sub": "Confirmaciones cerradas por el hotel trabajando la información que capturó Velma.", "a": "20", "b": "32", "d": "60 %", "dir": "up"}, {"k": "Contactos con autorización, capturados en cotizaciones", "sub": "Personas que dejaron sus datos y autorizaron ser contactadas.", "a": "4.404", "b": "8.612", "d": "96 %", "dir": "up"}, {"k": "Ingreso de las confirmaciones de alojamiento", "sub": "Valor total de las confirmaciones cerradas en el período.", "a": "$248.450 USD", "b": "$253.731 USD", "d": "2,1 %", "dir": "up"}]}, "hoteles": [{"h": "GHL Sunrise San Andres", "cot": 1246, "conf": 52, "noches": 203, "usdConf": 63010, "mes": [171, 106, 145, 175, 163, 204, 170, 112]}, {"h": "Sonesta Pereira", "cot": 953, "conf": 65, "noches": 141, "usdConf": 27635, "mes": [127, 78, 132, 119, 88, 137, 183, 89]}, {"h": "Park Lake Villarrica", "cot": 605, "conf": 21, "noches": 62, "usdConf": 14978, "mes": [104, 73, 52, 56, 67, 92, 96, 64]}, {"h": "GHL Hotel Relax Corales de Indias", "cot": 588, "conf": 27, "noches": 100, "usdConf": 14431, "mes": [79, 52, 69, 87, 100, 66, 85, 50]}, {"h": "GHL Relax Hotel Club El Puente", "cot": 802, "conf": 43, "noches": 102, "usdConf": 14010, "mes": [113, 35, 100, 88, 96, 119, 168, 82]}, {"h": "Sonesta Cartagena", "cot": 659, "conf": 32, "noches": 79, "usdConf": 13130, "mes": [115, 62, 90, 63, 55, 69, 120, 83]}, {"h": "GHL Hotel Relax Costa Azul", "cot": 959, "conf": 19, "noches": 57, "usdConf": 10767, "mes": [149, 111, 98, 117, 103, 128, 156, 97]}, {"h": "GHL Hotel Arsenal Cartagena", "cot": 259, "conf": 14, "noches": 48, "usdConf": 9362, "mes": [29, 15, 42, 24, 35, 20, 46, 48]}, {"h": "Sonesta Arequipa", "cot": 141, "conf": 27, "noches": 70, "usdConf": 8911, "mes": [13, 16, 8, 16, 10, 16, 35, 27]}, {"h": "GHL Grand Villavicencio", "cot": 521, "conf": 36, "noches": 66, "usdConf": 8197, "mes": [52, 53, 78, 65, 58, 65, 97, 53]}, {"h": "Sonesta Osorno", "cot": 459, "conf": 28, "noches": 49, "usdConf": 6166, "mes": [58, 69, 65, 52, 74, 54, 48, 39]}, {"h": "GHL Style Neiva", "cot": 272, "conf": 25, "noches": 53, "usdConf": 6099, "mes": [21, 16, 26, 35, 47, 60, 41, 26]}, {"h": "GHL Capital Bogota", "cot": 461, "conf": 26, "noches": 48, "usdConf": 5843, "mes": [46, 60, 61, 55, 53, 62, 65, 59]}, {"h": "Sonesta Ibague", "cot": 361, "conf": 26, "noches": 39, "usdConf": 5492, "mes": [29, 25, 25, 39, 49, 78, 74, 42]}, {"h": "Sonesta el Olivar Lima", "cot": 157, "conf": 11, "noches": 41, "usdConf": 5022, "mes": [16, 19, 19, 24, 15, 14, 28, 22]}, {"h": "GHL Barranquilla Atlantico", "cot": 327, "conf": 14, "noches": 32, "usdConf": 3755, "mes": [46, 20, 54, 34, 44, 54, 50, 24]}, {"h": "Sonesta Valledupar", "cot": 352, "conf": 16, "noches": 26, "usdConf": 3647, "mes": [32, 12, 58, 64, 45, 47, 55, 39]}, {"h": "Sonesta Bogota", "cot": 143, "conf": 11, "noches": 24, "usdConf": 3581, "mes": [22, 13, 27, 15, 14, 15, 18, 19]}, {"h": "GHL Style Bogota Occidente", "cot": 191, "conf": 12, "noches": 28, "usdConf": 3528, "mes": [16, 23, 14, 26, 20, 29, 39, 24]}, {"h": "Bioxury Bogota", "cot": 110, "conf": 6, "noches": 14, "usdConf": 2673, "mes": [12, 11, 14, 20, 16, 8, 17, 12]}, {"h": "GHL Porton Medellin", "cot": 139, "conf": 8, "noches": 19, "usdConf": 2587, "mes": [17, 10, 23, 25, 22, 14, 18, 10]}, {"h": "Makani Luxury Wanderlust", "cot": 173, "conf": 3, "noches": 3, "usdConf": 2552, "mes": [25, 29, 34, 24, 21, 18, 9, 13]}, {"h": "Sonesta Cali", "cot": 189, "conf": 11, "noches": 20, "usdConf": 2312, "mes": [17, 20, 32, 23, 24, 22, 26, 25]}, {"h": "Geotel Calama", "cot": 113, "conf": 7, "noches": 17, "usdConf": 2006, "mes": [13, 15, 6, 17, 13, 15, 19, 15]}, {"h": "Sonesta Cusco", "cot": 134, "conf": 4, "noches": 23, "usdConf": 2004, "mes": [24, 9, 15, 25, 15, 9, 20, 17]}, {"h": "Geotel Antofagasta", "cot": 232, "conf": 12, "noches": 28, "usdConf": 1909, "mes": [28, 30, 40, 36, 34, 29, 19, 16]}, {"h": "GHL Collection Armeria Real Bolivar", "cot": 47, "conf": 2, "noches": 6, "usdConf": 1447, "mes": [7, 3, 14, 9, 5, 1, 3, 5]}, {"h": "Biohotel Organic Suites Bogota", "cot": 102, "conf": 6, "noches": 6, "usdConf": 1255, "mes": [10, 12, 18, 16, 7, 19, 8, 12]}, {"h": "Latam Hotel Plaza Pradera Quetzaltenango", "cot": 170, "conf": 6, "noches": 8, "usdConf": 1156, "mes": [15, 17, 26, 27, 23, 24, 20, 18]}, {"h": "GHL Lago Titicaca", "cot": 124, "conf": 4, "noches": 4, "usdConf": 923, "mes": [6, 17, 19, 12, 21, 10, 26, 13]}, {"h": "GHL Style Yopal", "cot": 95, "conf": 6, "noches": 7, "usdConf": 894, "mes": [12, 9, 15, 8, 14, 13, 14, 10]}, {"h": "GHL Monteria", "cot": 145, "conf": 4, "noches": 5, "usdConf": 789, "mes": [26, 12, 15, 14, 17, 16, 25, 20]}, {"h": "GHL Collection 93", "cot": 61, "conf": 2, "noches": 5, "usdConf": 765, "mes": [3, 8, 5, 7, 9, 1, 14, 14]}, {"h": "Sonesta Bucaramanga Santander", "cot": 168, "conf": 5, "noches": 5, "usdConf": 648, "mes": [21, 13, 20, 27, 15, 23, 28, 21]}, {"h": "GHL Abadia Plaza Risaralda", "cot": 142, "conf": 5, "noches": 7, "usdConf": 631, "mes": [13, 12, 21, 23, 19, 18, 23, 13]}, {"h": "Hotel Tequendama Bogotá", "cot": 244, "conf": 6, "noches": 6, "usdConf": 589, "mes": [40, 24, 30, 25, 31, 28, 40, 26]}, {"h": "Sonesta Loja", "cot": 45, "conf": 3, "noches": 4, "usdConf": 433, "mes": [3, 1, 5, 9, 3, 3, 12, 9]}, {"h": "GHL Collection Hamilton Cundinamarca", "cot": 58, "conf": 2, "noches": 3, "usdConf": 353, "mes": [1, 3, 5, 6, 14, 10, 10, 9]}, {"h": "GHL Hotel San Lazaro Cartagena", "cot": 98, "conf": 1, "noches": 1, "usdConf": 145, "mes": [9, 5, 13, 17, 18, 7, 11, 18]}, {"h": "GHL Style Barrancabermeja", "cot": 11, "conf": 1, "noches": 1, "usdConf": 96, "mes": [0, 4, 2, 2, 1, 0, 0, 1]}, {"h": "Sonesta Posadas del Inca Puno", "cot": 53, "conf": 0, "noches": 0, "usdConf": 0, "mes": [7, 6, 2, 3, 6, 9, 9, 11]}, {"h": "Sonesta Posadas del Inca Yucay", "cot": 90, "conf": 0, "noches": 0, "usdConf": 0, "mes": [11, 9, 13, 13, 12, 11, 10, 11]}]}, T = D.tot, H = D.hoteles;
+const NV='#023859', BB='#6399BA', POS='#74AD52', GY='#808080';
+function mil(v){ return String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
+function dec(v,d){ const s=Math.abs(v).toFixed(d).split('.');
+  return (v<0?'-':'')+s[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.')+(d?','+s[1]:''); }
+const n0=v=>mil(v), usd=v=>'$'+mil(v)+' USD', pct=v=>dec(v,1)+' %';
+
+
+/* ---- Buscador y ordenamiento para todas las tablas ---- */
+function cellKey(td){
+  var r = td.querySelector('.rank');
+  var t = td.textContent;
+  if(r) t = t.slice(r.textContent.length);
+  return t.trim();
+}
+function numval(s){
+  s = String(s).replace(/\u2212/g,'-').replace(/[^0-9,.\-]/g,'');
+  if(!s || s==='-' || s==='.') return null;
+  s = s.replace(/\./g,'').replace(/,/g,'.');
+  var v = parseFloat(s);
+  return isNaN(v) ? null : v;
+}
+function enhanceTable(tblId, inputId, cntId, unit){
+  var tbl = document.getElementById(tblId); if(!tbl || !tbl.tBodies.length) return;
+  var tb = tbl.tBodies[0];
+  var all = Array.prototype.slice.call(tb.rows);
+  var body = all.filter(function(r){ return r.className.indexOf('totrow') === -1; });
+  var tot  = all.filter(function(r){ return r.className.indexOf('totrow') !== -1; });
+  var ths  = Array.prototype.slice.call(tbl.tHead.rows[0].cells);
+  var inp  = document.getElementById(inputId);
+  var sorted = -1;
+  function apply(){
+    var q = (inp && inp.value ? inp.value : '').toLowerCase().trim(), vis = 0;
+    body.forEach(function(r){
+      var ok = !q || r.textContent.toLowerCase().indexOf(q) > -1;
+      r.style.display = ok ? '' : 'none';
+      if(ok) vis++;
+    });
+    var c = document.getElementById(cntId);
+    if(c) c.textContent = vis + ' de ' + body.length + ' ' + unit;
+  }
+  ths.forEach(function(th,i){
+    th.className = (th.className + ' sortable').trim();
+    th.onclick = function(){
+      var dir = (sorted === i) ? -1 : 1;
+      sorted = (sorted === i) ? -2 : i;
+      ths.forEach(function(x){ x.className = x.className.replace(/ ?(asc|desc)/g,''); });
+      th.className += (dir === 1 ? ' asc' : ' desc');
+      var ok = 0;
+      body.forEach(function(r){ if(numval(cellKey(r.cells[i])) !== null) ok++; });
+      var num = body.length && (ok / body.length) >= 0.6;
+      body.sort(function(a,b){
+        var av = cellKey(a.cells[i]), bv = cellKey(b.cells[i]);
+        if(num){
+          var x = numval(av), y = numval(bv);
+          if(x === null) x = -Infinity;
+          if(y === null) y = -Infinity;
+          return (x - y) * dir;
+        }
+        return av.localeCompare(bv, 'es') * dir;
+      });
+      body.forEach(function(r){ tb.appendChild(r); });
+      tot.forEach(function(r){ tb.appendChild(r); });
+    };
+  });
+  if(inp) inp.oninput = apply;
+  apply();
+}
+
+/* Comparativo 2025 / 2026 */
+(function(){
+  let s='<thead><tr><th>Indicador</th><th>Ene–ago 2025</th><th>Ene–ago 2026</th><th>Variación</th></tr></thead><tbody>';
+  T.cmp.forEach(function(r){
+    var cls = r.dir==='flat' ? 'd-neu' : 'd-pos';
+    var mk  = r.dir==='flat' ? '−' : (r.dir==='down' ? '▼ −' : '▲ +');
+    s+='<tr><td>'+r.k+'<span class="isub">'+r.sub+'</span></td><td>'+r.a+'</td><td><b style="color:'+NV+'">'+r.b+'</b></td>'+
+       '<td class="'+cls+'">'+mk+r.d+'</td></tr>';
+  });
+  document.getElementById('tbl_cmp').innerHTML = s+'</tbody>';
+  enhanceTable('tbl_cmp','q_cmp','c_cmp','indicadores');
+})();
+
+/* Orden por ingreso confirmado */
+var COSTO = 79*8;   /* 79 USD por hotel al mes × 8 meses del período */
+H.sort(function(a,b){ return (b.usdConf-a.usdConf) || (b.conf-a.conf); });
+
+/* Top 5 */
+(function(){
+  document.getElementById('top5').innerHTML = H.slice(0,5).map(function(r,i){
+    return '<div class="card '+(i<3?'hi':'')+'">'+
+      '<div class="tag">'+(i+1)+'.\u00BA</div>'+
+      '<div class="nm">'+r.h+'</div>'+
+      '<div class="d"><b>'+usd(r.usdConf)+'</b> de ingreso<br>'+
+      '<b>'+n0(r.conf)+'</b> reservas confirmadas<br>'+
+      '<b>'+n0(r.noches)+'</b> noches (RN)</div></div>';
+  }).join('');
+})();
+
+/* Tabla ranking */
+(function(){
+  let s='<thead><tr><th>Hotel</th><th>Ingreso confirmado</th><th>Reservas confirmadas</th>'+
+        '<th>Número de noches (RN)</th></tr></thead><tbody>';
+  H.forEach(function(r,i){
+    s+='<tr class="'+(i<5?'top5':'')+'"><td><span class="rank">'+(i+1)+'</span>'+r.h+'</td>'+
+       '<td>'+usd(r.usdConf)+'</td><td>'+n0(r.conf)+'</td><td>'+n0(r.noches)+'</td></tr>';
+  });
+  s+='<tr class="totrow"><td>Total portafolio · 42 hoteles</td><td>'+usd(T.usdConf)+'</td><td>'+
+     n0(T.conf)+'</td><td>'+n0(T.noches)+'</td></tr></tbody>';
+  document.getElementById('tbl_rank').innerHTML=s;
+  enhanceTable('tbl_rank','q_rank','c_rank','hoteles');
+})();
+
+/* Volumen por hotel y por mes: cotizaciones o conversaciones estimadas */
+var RC = T.ratioConv;
+function renderVol(mode){
+  const cols = T.meses, esConv = (mode==='conv');
+  const f = function(v){ return esConv ? Math.round(v*RC) : v; };
+  const rows = H.slice().sort(function(a,b){return b.cot-a.cot;});
+  let max=0; rows.forEach(function(r){ r.mes.forEach(function(v){ if(v>max) max=v; }); });
+  max = f(max);
+  let s='<thead><tr><th>Hotel</th>'+cols.map(function(c){return '<th>'+c+'</th>';}).join('')+
+        '<th>Total</th><th>Prom. mes</th></tr></thead><tbody>';
+  rows.forEach(function(r){
+    const vals=r.mes.map(f), prom=vals.reduce(function(a,b){return a+b;},0)/vals.length;
+    s+='<tr><td>'+r.h+'</td>'+vals.map(function(v){
+      const a=max?(v/max)*0.75:0;
+      return '<td class="heat" style="background:rgba(99,153,186,'+a.toFixed(3)+')">'+(v?n0(v):'—')+'</td>';
+    }).join('')+'<td><b>'+n0(f(r.cot))+'</b></td><td>'+dec(prom,1)+'</td></tr>';
+  });
+  const tots=cols.map(function(_,i){ return rows.reduce(function(a,r){return a+f(r.mes[i]);},0); });
+  s+='<tr class="totrow"><td>Total portafolio</td>'+tots.map(function(v){return '<td>'+n0(v)+'</td>';}).join('')+
+     '<td>'+n0(f(T.cot))+'</td><td>'+mil(f(T.cot)/cols.length)+'</td></tr></tbody>';
+  document.getElementById('tbl_vol').innerHTML=s;
+  enhanceTable('tbl_vol','q_vol','c_vol','hoteles');
+  document.getElementById('volnote').innerHTML = esConv
+    ? 'Conversaciones atendidas por Velma, por hotel y por mes. El reporte de la plataforma entrega el total de conversaciones a nivel de portafolio, no por propiedad: el detalle mostrado se distribuye en proporción a las cotizaciones de cada hotel, con base en las 32.028 conversaciones del período.'
+    : 'Cotizaciones de alojamiento generadas por Velma, por hotel y por mes. El detalle corresponde a los meses completos; el total incluye además las cotizaciones registradas en los primeros días de septiembre.';
+}
+renderVol('cot');
+var tgBtns = Array.prototype.slice.call(document.querySelectorAll('#tg button'));
+tgBtns.forEach(function(b){
+  b.addEventListener('click', function(){
+    tgBtns.forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); renderVol(b.getAttribute('data-v'));
+  });
+});
+
+var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tabs button'));
+var panels  = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+tabBtns.forEach(function(b){
+  b.addEventListener('click', function(){
+    tabBtns.forEach(function(x){ x.classList.remove('on'); });
+    panels.forEach(function(p){ p.classList.remove('on'); });
+    b.classList.add('on');
+    document.getElementById(b.getAttribute('data-p')).classList.add('on');
+    window.scrollTo(0,0);
+  });
+});
+</script>
+</body>
+</html>
