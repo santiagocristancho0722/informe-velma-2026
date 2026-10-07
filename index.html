@@ -156,7 +156,7 @@ header.cover{margin-bottom:0}
     Resultados de 2026 a la fecha, comparados con el mismo período de 2025.</p>
     <div class="metaline">
       <div>Alcance<b>42 hoteles · 5 países</b></div>
-      <div>Período<b>1 de enero – 8 de septiembre de 2026</b></div>
+      <div>Período<b>1 de enero – 30 de septiembre de 2026</b></div>
     </div>
   </div>
 </header>
@@ -168,32 +168,33 @@ header.cover{margin-bottom:0}
 <section>
   <h2>Cifras del período</h2><div class="rule"></div>
   <div class="kpis">
-    <div class="kpi"><div class="n">32.028</div><div class="l">Conversaciones atendidas</div></div>
-    <div class="kpi"><div class="n">12.199</div><div class="l">Cotizaciones de alojamiento generadas</div></div>
-    <div class="kpi"><div class="n">609</div><div class="l">Reservas confirmadas</div></div>
-    <div class="kpi"><div class="n">1.460</div><div class="l">Número de noches confirmadas (RN)</div></div>
-    <div class="kpi accent"><div class="n">$253.731 USD</div><div class="l">Ingreso confirmado</div></div>
+    <div class="kpi"><div class="n">35.531</div><div class="l">Conversaciones atendidas</div></div>
+    <div class="kpi"><div class="n">13.517</div><div class="l">Cotizaciones de alojamiento generadas</div></div>
+    <div class="kpi"><div class="n">670</div><div class="l">Reservas confirmadas</div></div>
+    <div class="kpi"><div class="n">1.613</div><div class="l">Número de noches confirmadas (RN)</div></div>
+    <div class="kpi accent"><div class="n">$278.908 USD</div><div class="l">Ingreso confirmado</div></div>
   </div>
 </section>
 
 <section>
   <h2>Autonomía de Velma</h2><div class="rule"></div>
-  <h3>577 de las 609 cotizaciones confirmadas se cerraron sin intervención humana</h3>
-  <p class="lead">El <b>94,7 %</b> de las cotizaciones confirmadas en el período las cerró Velma por sí
-  misma, de principio a fin. Las 32 restantes se cerraron con seguimiento comercial del hotel sobre la
+  <h3>634 de las 670 cotizaciones confirmadas se cerraron sin intervención humana</h3>
+  <p class="lead">El <b>94,6 %</b> de las cotizaciones confirmadas en el período las cerró Velma por sí
+  misma, de principio a fin. Las 36 restantes se cerraron con seguimiento comercial del hotel sobre la
   información que Velma había capturado. En la atención ocurre lo mismo: el <b>87 %</b> de los temas
   consultados se resolvió dentro del chatbot, sin llegar a recepción ni a reservas.</p>
   <div class="kpis k2">
-    <div class="kpi"><div class="n">577</div><div class="l">Cotizaciones confirmadas de forma autónoma</div></div>
-    <div class="kpi"><div class="n">32</div><div class="l">Cotizaciones confirmadas con seguimiento comercial</div></div>
+    <div class="kpi"><div class="n">634</div><div class="l">Cotizaciones confirmadas de forma autónoma</div></div>
+    <div class="kpi"><div class="n">36</div><div class="l">Cotizaciones confirmadas con seguimiento comercial</div></div>
   </div>
 </section>
 
 <section>
   <h2>Evolución frente a 2025</h2><div class="rule"></div>
   <h3>La herramienta rinde más este año que el anterior</h3>
-  <p class="lead">Mismo período, mismo alcance. Velma convierte mejor, escala menos consultas al hotel
-  y entrega una base de contactos más aprovechable que hace un año.</p>
+  <p class="lead">Velma convierte mejor, escala menos consultas al hotel y entrega una base de contactos
+  más aprovechable que hace un año. La comparación toma enero a agosto en ambos años, los meses
+  disponibles del período de 2025.</p>
   <div class="tsearch">
     <input id="q_cmp" type="text" placeholder="Buscar indicador…">
     <span class="cnt" id="c_cmp"></span>
@@ -209,25 +210,29 @@ header.cover{margin-bottom:0}
 <div class="panel " id="p1">
 <section>
   <h2>Desempeño por hotel</h2><div class="rule"></div>
-  <h3>Cinco hoteles concentran el 53 % del ingreso confirmado</h3>
+  <h3>Cinco hoteles concentran el 52 % del ingreso confirmado</h3>
   <p class="lead">Estos son los cinco hoteles que más ingreso confirmado generaron a través de Velma
-  durante el período. Entre los cinco reúnen el 53 % del total del portafolio, y GHL Sunrise San Andrés
+  durante el período. Entre los cinco reúnen el 52 % del total del portafolio, y GHL Sunrise San Andrés
   aporta por sí solo una cuarta parte.</p>
   <div class="cards" id="top5"></div>
   <p class="lead" style="margin-top:26px">La tabla lista las 42 propiedades en orden descendente por
-  ingreso confirmado. Velma tiene un costo de <b>$79 USD mensuales por hotel</b>, que en el período
-  suman $26.544 USD en todo el portafolio frente a los $253.731 USD confirmados a través del canal.</p>
+  ingreso confirmado. El costo de Velma <b>varía según la propiedad</b>, entre $43 y $179 USD mensuales
+  de acuerdo con el tamaño y el plan de cada hotel: en conjunto son $4.238 USD al mes, equivalentes a
+  <b>$38.142 USD</b> en los nueve meses del período frente a los $278.908 USD confirmados a través del
+  canal. La columna de rentabilidad compara el ingreso de cada hotel con su propio costo.</p>
   <div class="tsearch">
     <input id="q_rank" type="text" placeholder="Buscar hotel…">
     <span class="cnt" id="c_rank"></span>
     <span class="hint">Haz clic en cualquier columna para ordenarla</span>
   </div>
   <div class="tblwrap stickyhead"><table id="tbl_rank"></table></div>
-  <p class="note">Número de noches (RN) = noches × habitaciones de cada confirmación de alojamiento.</p>
+  <p class="note">Número de noches (RN) = noches × habitaciones de cada confirmación de alojamiento.
+  Costo del período = fee mensual de la propiedad por los nueve meses. Rentabilidad = retorno del ingreso
+  confirmado sobre ese costo; en rojo, las propiedades que aún no lo cubren.</p>
   <div class="callout watch">
-    <p><b>Ocho propiedades cierran el período con un aporte marginal del canal</b> y ya están mapeadas y
-    en análisis: Abadía Plaza Risaralda, Tequendama Bogotá, Sonesta Loja, Collection Hamilton, San Lázaro
-    Cartagena, Style Barrancabermeja, y Posadas del Inca Puno y Yucay, estas dos últimas sin ninguna
+    <p><b>Nueve propiedades aún no cubren su costo</b> y ya están mapeadas y en análisis: GHL Lago
+    Titicaca, GHL Montería, Sonesta Bucaramanga, Tequendama Bogotá, Sonesta Loja, Collection Hamilton,
+    San Lázaro Cartagena, Style Barrancabermeja y Posadas del Inca Puno, esta última sin ninguna
     confirmación en el período. Para cada una se revisa si hay margen de maniobra por la vía del
     contenido, los diálogos y la captación de cotizaciones; donde el canal no resulte determinante para
     esa propiedad, se evaluará limitarlo.</p>
@@ -238,22 +243,22 @@ header.cover{margin-bottom:0}
 <div class="panel " id="p2">
 <section>
   <h2>Volumen de demanda</h2><div class="rule"></div>
-  <h3>Velma sostiene 1.525 cotizaciones de alojamiento al mes en todo el portafolio</h3>
-  <p class="lead">Cada hotel atiende en promedio <b>95 conversaciones al mes</b> sobre temas de todo
+  <h3>Velma sostiene 1.502 cotizaciones de alojamiento al mes en todo el portafolio</h3>
+  <p class="lead">Cada hotel atiende en promedio <b>94 conversaciones al mes</b> sobre temas de todo
   tipo, y <b>36 de ellas</b> terminan en una cotización de alojamiento. El flujo se mantiene estable a
   lo largo del año, sin caídas estacionales relevantes.</p>
   <p class="grouplbl">Promedio mensual por hotel</p>
   <div class="kpis k2">
-    <div class="kpi"><div class="n">95</div><div class="l">Conversaciones</div></div>
+    <div class="kpi"><div class="n">94</div><div class="l">Conversaciones</div></div>
     <div class="kpi"><div class="n">36</div><div class="l">Cotizaciones de alojamiento</div></div>
   </div>
   <p class="grouplbl">Promedio semanal por hotel</p>
   <div class="kpis k2">
-    <div class="kpi"><div class="n">21</div><div class="l">Conversaciones</div></div>
+    <div class="kpi"><div class="n">22</div><div class="l">Conversaciones</div></div>
     <div class="kpi"><div class="n">8</div><div class="l">Cotizaciones de alojamiento</div></div>
   </div>
-  <p class="note">Promedios del portafolio: 32.028 conversaciones y 12.199 cotizaciones repartidas entre
-  42 hoteles y los ocho meses del período.</p>
+  <p class="note">Promedios del portafolio: 35.531 conversaciones y 13.517 cotizaciones repartidas entre
+  42 hoteles y los nueve meses del período.</p>
   <div class="toggle" id="tg">
     <button class="on" data-v="cot">Cotizaciones</button>
     <button data-v="conv">Conversaciones</button>
@@ -276,9 +281,9 @@ header.cover{margin-bottom:0}
   teléfono, hotel de interés, fechas y número de huéspedes. Es una base propia, sin costo de captación,
   con <b>34 días de margen</b> para trabajarla antes de la fecha de llegada.</p>
   <div class="kpis k3">
-    <div class="kpi"><div class="n">11.733</div><div class="l">Correos electrónicos únicos capturados</div></div>
-    <div class="kpi"><div class="n">8.612</div><div class="l">Contactos con autorización explícita de contacto</div></div>
-    <div class="kpi"><div class="n">4.121</div><div class="l">Contactos con número telefónico</div></div>
+    <div class="kpi"><div class="n">13.020</div><div class="l">Correos electrónicos únicos capturados</div></div>
+    <div class="kpi"><div class="n">9.534</div><div class="l">Contactos con autorización explícita de contacto</div></div>
+    <div class="kpi"><div class="n">4.605</div><div class="l">Contactos con número telefónico</div></div>
   </div>
 
   <p class="grouplbl" style="margin-top:26px">Qué estamos haciendo con esa base</p>
@@ -295,8 +300,8 @@ header.cover{margin-bottom:0}
         <li>Acompaña la conversación hasta cerrar la reserva.</li>
       </ul>
       <div class="res"><span>Qué gana el hotel</span>Recupera ventas que se habrían perdido y las cierra
-      en canal directo, sin comisión de intermediarios. Cerró el período con <b>65 confirmaciones</b>, la
-      cifra más alta del portafolio, y aporta <b>16 de las 32</b> reservas que el portafolio cerró con
+      en canal directo, sin comisión de intermediarios. Cerró el período con <b>75 confirmaciones</b>, la
+      cifra más alta del portafolio, y aporta <b>16 de las 36</b> reservas que el portafolio cerró con
       gestión comercial.</div>
     </div>
     <div class="card hi">
@@ -375,7 +380,7 @@ header.cover{margin-bottom:0}
 </div>
 
 <script>
-const D = {"tot": {"conv": 32028, "cot": 12199, "conf": 609, "auto": 577, "staff": 32, "noches": 1460, "usdConf": 253731, "hoteles": 42, "meses": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago"], "emailsUnic": 11733, "optin": 8612, "tels": 4121, "ratioConv": 2.6255, "costoMes": 79, "costoPeriodo": 632, "cmp": [{"k": "Conversión de cotizaciones en confirmaciones de alojamiento", "sub": "Del total de cotizaciones generadas, cuántas terminaron en alojamiento confirmado.", "a": "4,2 %", "b": "5,0 %", "d": "0,8 pp", "dir": "up"}, {"k": "Diálogos de consulta resueltos sin escalar al hotel", "sub": "De los temas consultados, los que Velma resolvió sin pedir contacto con el hotel.", "a": "81 %", "b": "87 %", "d": "6 pp", "dir": "up"}, {"k": "Consultas sin respuesta de Velma", "sub": "Temas para los que el chatbot no encontró respuesta.", "a": "7 %", "b": "3 %", "d": "4 pp", "dir": "down"}, {"k": "Confirmaciones de alojamiento con seguimiento comercial", "sub": "Confirmaciones cerradas por el hotel trabajando la información que capturó Velma.", "a": "20", "b": "32", "d": "60 %", "dir": "up"}, {"k": "Contactos con autorización, capturados en cotizaciones", "sub": "Personas que dejaron sus datos y autorizaron ser contactadas.", "a": "4.404", "b": "8.612", "d": "96 %", "dir": "up"}, {"k": "Ingreso de las confirmaciones de alojamiento", "sub": "Valor total de las confirmaciones cerradas en el período.", "a": "$248.450 USD", "b": "$253.731 USD", "d": "2,1 %", "dir": "up"}]}, "hoteles": [{"h": "GHL Sunrise San Andres", "cot": 1246, "conf": 52, "noches": 203, "usdConf": 63010, "mes": [171, 106, 145, 175, 163, 204, 170, 112]}, {"h": "Sonesta Pereira", "cot": 953, "conf": 65, "noches": 141, "usdConf": 27635, "mes": [127, 78, 132, 119, 88, 137, 183, 89]}, {"h": "Park Lake Villarrica", "cot": 605, "conf": 21, "noches": 62, "usdConf": 14978, "mes": [104, 73, 52, 56, 67, 92, 96, 64]}, {"h": "GHL Hotel Relax Corales de Indias", "cot": 588, "conf": 27, "noches": 100, "usdConf": 14431, "mes": [79, 52, 69, 87, 100, 66, 85, 50]}, {"h": "GHL Relax Hotel Club El Puente", "cot": 802, "conf": 43, "noches": 102, "usdConf": 14010, "mes": [113, 35, 100, 88, 96, 119, 168, 82]}, {"h": "Sonesta Cartagena", "cot": 659, "conf": 32, "noches": 79, "usdConf": 13130, "mes": [115, 62, 90, 63, 55, 69, 120, 83]}, {"h": "GHL Hotel Relax Costa Azul", "cot": 959, "conf": 19, "noches": 57, "usdConf": 10767, "mes": [149, 111, 98, 117, 103, 128, 156, 97]}, {"h": "GHL Hotel Arsenal Cartagena", "cot": 259, "conf": 14, "noches": 48, "usdConf": 9362, "mes": [29, 15, 42, 24, 35, 20, 46, 48]}, {"h": "Sonesta Arequipa", "cot": 141, "conf": 27, "noches": 70, "usdConf": 8911, "mes": [13, 16, 8, 16, 10, 16, 35, 27]}, {"h": "GHL Grand Villavicencio", "cot": 521, "conf": 36, "noches": 66, "usdConf": 8197, "mes": [52, 53, 78, 65, 58, 65, 97, 53]}, {"h": "Sonesta Osorno", "cot": 459, "conf": 28, "noches": 49, "usdConf": 6166, "mes": [58, 69, 65, 52, 74, 54, 48, 39]}, {"h": "GHL Style Neiva", "cot": 272, "conf": 25, "noches": 53, "usdConf": 6099, "mes": [21, 16, 26, 35, 47, 60, 41, 26]}, {"h": "GHL Capital Bogota", "cot": 461, "conf": 26, "noches": 48, "usdConf": 5843, "mes": [46, 60, 61, 55, 53, 62, 65, 59]}, {"h": "Sonesta Ibague", "cot": 361, "conf": 26, "noches": 39, "usdConf": 5492, "mes": [29, 25, 25, 39, 49, 78, 74, 42]}, {"h": "Sonesta el Olivar Lima", "cot": 157, "conf": 11, "noches": 41, "usdConf": 5022, "mes": [16, 19, 19, 24, 15, 14, 28, 22]}, {"h": "GHL Barranquilla Atlantico", "cot": 327, "conf": 14, "noches": 32, "usdConf": 3755, "mes": [46, 20, 54, 34, 44, 54, 50, 24]}, {"h": "Sonesta Valledupar", "cot": 352, "conf": 16, "noches": 26, "usdConf": 3647, "mes": [32, 12, 58, 64, 45, 47, 55, 39]}, {"h": "Sonesta Bogota", "cot": 143, "conf": 11, "noches": 24, "usdConf": 3581, "mes": [22, 13, 27, 15, 14, 15, 18, 19]}, {"h": "GHL Style Bogota Occidente", "cot": 191, "conf": 12, "noches": 28, "usdConf": 3528, "mes": [16, 23, 14, 26, 20, 29, 39, 24]}, {"h": "Bioxury Bogota", "cot": 110, "conf": 6, "noches": 14, "usdConf": 2673, "mes": [12, 11, 14, 20, 16, 8, 17, 12]}, {"h": "GHL Porton Medellin", "cot": 139, "conf": 8, "noches": 19, "usdConf": 2587, "mes": [17, 10, 23, 25, 22, 14, 18, 10]}, {"h": "Makani Luxury Wanderlust", "cot": 173, "conf": 3, "noches": 3, "usdConf": 2552, "mes": [25, 29, 34, 24, 21, 18, 9, 13]}, {"h": "Sonesta Cali", "cot": 189, "conf": 11, "noches": 20, "usdConf": 2312, "mes": [17, 20, 32, 23, 24, 22, 26, 25]}, {"h": "Geotel Calama", "cot": 113, "conf": 7, "noches": 17, "usdConf": 2006, "mes": [13, 15, 6, 17, 13, 15, 19, 15]}, {"h": "Sonesta Cusco", "cot": 134, "conf": 4, "noches": 23, "usdConf": 2004, "mes": [24, 9, 15, 25, 15, 9, 20, 17]}, {"h": "Geotel Antofagasta", "cot": 232, "conf": 12, "noches": 28, "usdConf": 1909, "mes": [28, 30, 40, 36, 34, 29, 19, 16]}, {"h": "GHL Collection Armeria Real Bolivar", "cot": 47, "conf": 2, "noches": 6, "usdConf": 1447, "mes": [7, 3, 14, 9, 5, 1, 3, 5]}, {"h": "Biohotel Organic Suites Bogota", "cot": 102, "conf": 6, "noches": 6, "usdConf": 1255, "mes": [10, 12, 18, 16, 7, 19, 8, 12]}, {"h": "Latam Hotel Plaza Pradera Quetzaltenango", "cot": 170, "conf": 6, "noches": 8, "usdConf": 1156, "mes": [15, 17, 26, 27, 23, 24, 20, 18]}, {"h": "GHL Lago Titicaca", "cot": 124, "conf": 4, "noches": 4, "usdConf": 923, "mes": [6, 17, 19, 12, 21, 10, 26, 13]}, {"h": "GHL Style Yopal", "cot": 95, "conf": 6, "noches": 7, "usdConf": 894, "mes": [12, 9, 15, 8, 14, 13, 14, 10]}, {"h": "GHL Monteria", "cot": 145, "conf": 4, "noches": 5, "usdConf": 789, "mes": [26, 12, 15, 14, 17, 16, 25, 20]}, {"h": "GHL Collection 93", "cot": 61, "conf": 2, "noches": 5, "usdConf": 765, "mes": [3, 8, 5, 7, 9, 1, 14, 14]}, {"h": "Sonesta Bucaramanga Santander", "cot": 168, "conf": 5, "noches": 5, "usdConf": 648, "mes": [21, 13, 20, 27, 15, 23, 28, 21]}, {"h": "GHL Abadia Plaza Risaralda", "cot": 142, "conf": 5, "noches": 7, "usdConf": 631, "mes": [13, 12, 21, 23, 19, 18, 23, 13]}, {"h": "Hotel Tequendama Bogotá", "cot": 244, "conf": 6, "noches": 6, "usdConf": 589, "mes": [40, 24, 30, 25, 31, 28, 40, 26]}, {"h": "Sonesta Loja", "cot": 45, "conf": 3, "noches": 4, "usdConf": 433, "mes": [3, 1, 5, 9, 3, 3, 12, 9]}, {"h": "GHL Collection Hamilton Cundinamarca", "cot": 58, "conf": 2, "noches": 3, "usdConf": 353, "mes": [1, 3, 5, 6, 14, 10, 10, 9]}, {"h": "GHL Hotel San Lazaro Cartagena", "cot": 98, "conf": 1, "noches": 1, "usdConf": 145, "mes": [9, 5, 13, 17, 18, 7, 11, 18]}, {"h": "GHL Style Barrancabermeja", "cot": 11, "conf": 1, "noches": 1, "usdConf": 96, "mes": [0, 4, 2, 2, 1, 0, 0, 1]}, {"h": "Sonesta Posadas del Inca Puno", "cot": 53, "conf": 0, "noches": 0, "usdConf": 0, "mes": [7, 6, 2, 3, 6, 9, 9, 11]}, {"h": "Sonesta Posadas del Inca Yucay", "cot": 90, "conf": 0, "noches": 0, "usdConf": 0, "mes": [11, 9, 13, 13, 12, 11, 10, 11]}]}, T = D.tot, H = D.hoteles;
+const D = {"tot": {"conv": 35531, "cot": 13517, "conf": 670, "auto": 634, "staff": 36, "noches": 1613, "usdConf": 278908, "hoteles": 42, "meses": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep"], "emailsUnic": 13020, "optin": 9534, "tels": 4605, "ratioConv": 2.6286, "costoTotal": 38142, "cmp": [{"k": "Conversión de cotizaciones en confirmaciones de alojamiento", "sub": "Del total de cotizaciones generadas, cuántas terminaron en alojamiento confirmado.", "a": "4,2 %", "b": "5,0 %", "d": "0,8 pp", "dir": "up"}, {"k": "Diálogos de consulta resueltos sin escalar al hotel", "sub": "De los temas consultados, los que Velma resolvió sin pedir contacto con el hotel.", "a": "81 %", "b": "87 %", "d": "6 pp", "dir": "up"}, {"k": "Consultas sin respuesta de Velma", "sub": "Temas para los que el chatbot no encontró respuesta.", "a": "7 %", "b": "3 %", "d": "4 pp", "dir": "down"}, {"k": "Confirmaciones de alojamiento con seguimiento comercial", "sub": "Confirmaciones cerradas por el hotel trabajando la información que capturó Velma.", "a": "20", "b": "31", "d": "55 %", "dir": "up"}, {"k": "Contactos con autorización, capturados en cotizaciones", "sub": "Personas que dejaron sus datos y autorizaron ser contactadas.", "a": "4.395", "b": "8.578", "d": "95 %", "dir": "up"}, {"k": "Ingreso de las confirmaciones de alojamiento", "sub": "Valor total de las confirmaciones cerradas en el período.", "a": "$248.063 USD", "b": "$251.752 USD", "d": "1,5 %", "dir": "up"}]}, "hoteles": [{"h": "GHL Sunrise San Andres", "cot": 1376, "conf": 57, "noches": 223, "usdConf": 67669, "costo": 981, "roi": 6798.0, "mes": [171, 106, 145, 175, 162, 204, 168, 112, 133]}, {"h": "Sonesta Pereira", "cot": 1048, "conf": 75, "noches": 155, "usdConf": 30801, "costo": 1611, "roi": 1811.9, "mes": [125, 77, 131, 117, 87, 137, 181, 89, 104]}, {"h": "GHL Relax Hotel Club El Puente", "cot": 903, "conf": 45, "noches": 114, "usdConf": 15844, "costo": 936, "roi": 1592.7, "mes": [113, 34, 100, 88, 95, 119, 166, 81, 107]}, {"h": "Park Lake Villarrica", "cot": 653, "conf": 22, "noches": 63, "usdConf": 15128, "costo": 936, "roi": 1516.2, "mes": [104, 73, 52, 56, 67, 92, 96, 63, 50]}, {"h": "GHL Hotel Relax Corales de Indias", "cot": 628, "conf": 28, "noches": 101, "usdConf": 14630, "costo": 981, "roi": 1391.3, "mes": [79, 52, 69, 87, 100, 65, 85, 50, 41]}, {"h": "Sonesta Cartagena", "cot": 733, "conf": 33, "noches": 80, "usdConf": 13328, "costo": 981, "roi": 1258.6, "mes": [115, 62, 90, 63, 55, 69, 120, 83, 76]}, {"h": "GHL Hotel Relax Costa Azul", "cot": 1035, "conf": 21, "noches": 65, "usdConf": 12694, "costo": 936, "roi": 1256.2, "mes": [148, 111, 98, 117, 103, 128, 156, 97, 77]}, {"h": "GHL Hotel Arsenal Cartagena", "cot": 294, "conf": 15, "noches": 51, "usdConf": 10162, "costo": 936, "roi": 985.7, "mes": [29, 15, 42, 24, 35, 20, 45, 48, 36]}, {"h": "Sonesta Arequipa", "cot": 165, "conf": 31, "noches": 79, "usdConf": 9949, "costo": 981, "roi": 914.2, "mes": [13, 16, 8, 16, 10, 16, 35, 27, 24]}, {"h": "GHL Grand Villavicencio", "cot": 586, "conf": 42, "noches": 80, "usdConf": 9831, "costo": 981, "roi": 902.1, "mes": [51, 53, 78, 64, 57, 65, 97, 53, 68]}, {"h": "Sonesta Osorno", "cot": 499, "conf": 33, "noches": 64, "usdConf": 8116, "costo": 981, "roi": 727.3, "mes": [57, 68, 65, 52, 73, 54, 46, 39, 45]}, {"h": "GHL Capital Bogota", "cot": 526, "conf": 30, "noches": 58, "usdConf": 7151, "costo": 981, "roi": 629.0, "mes": [46, 60, 61, 55, 53, 62, 65, 59, 65]}, {"h": "GHL Style Neiva", "cot": 293, "conf": 25, "noches": 53, "usdConf": 6099, "costo": 981, "roi": 521.7, "mes": [21, 16, 26, 35, 47, 59, 41, 26, 22]}, {"h": "Sonesta Ibague", "cot": 383, "conf": 28, "noches": 42, "usdConf": 5988, "costo": 936, "roi": 539.7, "mes": [29, 25, 25, 39, 49, 78, 74, 42, 22]}, {"h": "Sonesta el Olivar Lima", "cot": 185, "conf": 11, "noches": 41, "usdConf": 5022, "costo": 981, "roi": 411.9, "mes": [16, 19, 19, 24, 15, 14, 27, 22, 29]}, {"h": "GHL Style Bogota Occidente", "cot": 212, "conf": 15, "noches": 35, "usdConf": 4453, "costo": 981, "roi": 353.9, "mes": [16, 23, 14, 26, 20, 29, 39, 24, 21]}, {"h": "Sonesta Valledupar", "cot": 392, "conf": 17, "noches": 29, "usdConf": 4073, "costo": 981, "roi": 315.2, "mes": [32, 12, 58, 64, 45, 46, 55, 39, 41]}, {"h": "GHL Barranquilla Atlantico", "cot": 356, "conf": 14, "noches": 32, "usdConf": 3755, "costo": 981, "roi": 282.8, "mes": [46, 20, 54, 34, 44, 53, 50, 24, 31]}, {"h": "Sonesta Bogota", "cot": 156, "conf": 11, "noches": 24, "usdConf": 3581, "costo": 981, "roi": 265.0, "mes": [22, 13, 27, 15, 14, 15, 18, 19, 13]}, {"h": "Bioxury Bogota", "cot": 124, "conf": 7, "noches": 16, "usdConf": 3046, "costo": 936, "roi": 225.4, "mes": [12, 11, 14, 20, 16, 8, 17, 12, 14]}, {"h": "Geotel Antofagasta", "cot": 252, "conf": 15, "noches": 41, "usdConf": 2883, "costo": 981, "roi": 193.9, "mes": [28, 30, 40, 36, 34, 29, 19, 16, 20]}, {"h": "Sonesta Cali", "cot": 222, "conf": 13, "noches": 22, "usdConf": 2599, "costo": 981, "roi": 164.9, "mes": [17, 20, 32, 23, 24, 22, 26, 25, 33]}, {"h": "GHL Porton Medellin", "cot": 157, "conf": 8, "noches": 19, "usdConf": 2587, "costo": 936, "roi": 176.4, "mes": [17, 10, 23, 25, 22, 14, 17, 10, 19]}, {"h": "Makani Luxury Wanderlust", "cot": 191, "conf": 3, "noches": 3, "usdConf": 2552, "costo": 387, "roi": 559.4, "mes": [25, 29, 34, 24, 21, 18, 9, 13, 18]}, {"h": "GHL Collection Armeria Real Bolivar", "cot": 54, "conf": 3, "noches": 11, "usdConf": 2324, "costo": 387, "roi": 500.5, "mes": [7, 3, 14, 9, 5, 1, 3, 5, 7]}, {"h": "Geotel Calama", "cot": 129, "conf": 7, "noches": 17, "usdConf": 2006, "costo": 981, "roi": 104.5, "mes": [13, 15, 6, 17, 13, 15, 19, 15, 16]}, {"h": "Sonesta Cusco", "cot": 150, "conf": 4, "noches": 23, "usdConf": 2004, "costo": 981, "roi": 104.3, "mes": [24, 9, 15, 25, 15, 9, 20, 17, 16]}, {"h": "Biohotel Organic Suites Bogota", "cot": 118, "conf": 7, "noches": 8, "usdConf": 1481, "costo": 936, "roi": 58.2, "mes": [10, 12, 18, 16, 7, 19, 8, 12, 16]}, {"h": "Sonesta Posadas del Inca Yucay", "cot": 103, "conf": 1, "noches": 4, "usdConf": 1276, "costo": 936, "roi": 36.3, "mes": [11, 9, 13, 13, 12, 11, 10, 11, 13]}, {"h": "Latam Hotel Plaza Pradera Quetzaltenango", "cot": 191, "conf": 6, "noches": 8, "usdConf": 1156, "costo": 936, "roi": 23.5, "mes": [15, 17, 26, 27, 23, 24, 20, 18, 21]}, {"h": "GHL Style Yopal", "cot": 107, "conf": 7, "noches": 8, "usdConf": 986, "costo": 936, "roi": 5.3, "mes": [12, 9, 15, 8, 14, 13, 14, 10, 12]}, {"h": "GHL Lago Titicaca", "cot": 132, "conf": 4, "noches": 4, "usdConf": 923, "costo": 981, "roi": -5.9, "mes": [6, 17, 19, 12, 21, 10, 26, 13, 8]}, {"h": "GHL Collection 93", "cot": 76, "conf": 3, "noches": 6, "usdConf": 923, "costo": 387, "roi": 138.5, "mes": [3, 8, 5, 7, 9, 1, 14, 14, 15]}, {"h": "GHL Abadia Plaza Risaralda", "cot": 161, "conf": 7, "noches": 9, "usdConf": 838, "costo": 387, "roi": 116.5, "mes": [13, 12, 21, 23, 19, 18, 22, 13, 20]}, {"h": "GHL Monteria", "cot": 161, "conf": 4, "noches": 5, "usdConf": 789, "costo": 936, "roi": -15.7, "mes": [26, 12, 15, 14, 17, 16, 25, 20, 16]}, {"h": "Sonesta Bucaramanga Santander", "cot": 199, "conf": 5, "noches": 5, "usdConf": 648, "costo": 981, "roi": -33.9, "mes": [21, 13, 20, 27, 15, 23, 28, 21, 31]}, {"h": "Hotel Tequendama Bogotá", "cot": 271, "conf": 6, "noches": 6, "usdConf": 589, "costo": 981, "roi": -40.0, "mes": [40, 24, 30, 25, 31, 28, 40, 26, 27]}, {"h": "Sonesta Loja", "cot": 48, "conf": 3, "noches": 4, "usdConf": 433, "costo": 936, "roi": -53.7, "mes": [3, 1, 5, 9, 3, 3, 12, 9, 3]}, {"h": "GHL Collection Hamilton Cundinamarca", "cot": 67, "conf": 2, "noches": 3, "usdConf": 353, "costo": 387, "roi": -8.8, "mes": [1, 3, 5, 6, 14, 10, 10, 9, 9]}, {"h": "GHL Hotel San Lazaro Cartagena", "cot": 112, "conf": 1, "noches": 1, "usdConf": 145, "costo": 936, "roi": -84.5, "mes": [9, 5, 13, 17, 18, 7, 11, 18, 14]}, {"h": "GHL Style Barrancabermeja", "cot": 11, "conf": 1, "noches": 1, "usdConf": 93, "costo": 936, "roi": -90.1, "mes": [0, 4, 2, 2, 1, 0, 0, 1, 1]}, {"h": "Sonesta Posadas del Inca Puno", "cot": 58, "conf": 0, "noches": 0, "usdConf": 0, "costo": 936, "roi": -100.0, "mes": [7, 6, 2, 3, 6, 9, 9, 11, 5]}]}, T = D.tot, H = D.hoteles;
 const NV='#023859', BB='#6399BA', POS='#74AD52', GY='#808080';
 function mil(v){ return String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
 function dec(v,d){ const s=Math.abs(v).toFixed(d).split('.');
@@ -475,14 +480,20 @@ H.sort(function(a,b){ return (b.usdConf-a.usdConf) || (b.conf-a.conf); });
 
 /* Tabla ranking */
 (function(){
+  var tCost = T.costoTotal, bal = T.usdConf - tCost;
   let s='<thead><tr><th>Hotel</th><th>Ingreso confirmado</th><th>Reservas confirmadas</th>'+
-        '<th>Número de noches (RN)</th></tr></thead><tbody>';
+        '<th>Número de noches (RN)</th><th>Costo del período</th>'+
+        '<th class="sticky">Rentabilidad</th></tr></thead><tbody>';
   H.forEach(function(r,i){
+    var neg = r.roi < 0, a = Math.abs(r.roi);
     s+='<tr class="'+(i<5?'top5':'')+'"><td><span class="rank">'+(i+1)+'</span>'+r.h+'</td>'+
-       '<td>'+usd(r.usdConf)+'</td><td>'+n0(r.conf)+'</td><td>'+n0(r.noches)+'</td></tr>';
+       '<td>'+usd(r.usdConf)+'</td><td>'+n0(r.conf)+'</td><td>'+n0(r.noches)+'</td>'+
+       '<td>'+usd(r.costo)+'</td>'+
+       '<td class="sticky'+(neg?' neg':'')+'">'+(neg?'\u2212':'+')+dec(a, a<10?1:0)+' %</td></tr>';
   });
   s+='<tr class="totrow"><td>Total portafolio · 42 hoteles</td><td>'+usd(T.usdConf)+'</td><td>'+
-     n0(T.conf)+'</td><td>'+n0(T.noches)+'</td></tr></tbody>';
+     n0(T.conf)+'</td><td>'+n0(T.noches)+'</td><td>'+usd(tCost)+'</td>'+
+     '<td class="sticky">+'+dec(bal/tCost*100,0)+' %</td></tr></tbody>';
   document.getElementById('tbl_rank').innerHTML=s;
   enhanceTable('tbl_rank','q_rank','c_rank','hoteles');
 })();
@@ -510,8 +521,8 @@ function renderVol(mode){
   document.getElementById('tbl_vol').innerHTML=s;
   enhanceTable('tbl_vol','q_vol','c_vol','hoteles');
   document.getElementById('volnote').innerHTML = esConv
-    ? 'Conversaciones atendidas por Velma, por hotel y por mes. El reporte de la plataforma entrega el total de conversaciones a nivel de portafolio, no por propiedad: el detalle mostrado se distribuye en proporción a las cotizaciones de cada hotel, con base en las 32.028 conversaciones del período.'
-    : 'Cotizaciones de alojamiento generadas por Velma, por hotel y por mes. El detalle corresponde a los meses completos; el total incluye además las cotizaciones registradas en los primeros días de septiembre.';
+    ? 'Conversaciones atendidas por Velma, por hotel y por mes. El reporte de la plataforma entrega el total de conversaciones a nivel de portafolio, no por propiedad: el detalle mostrado se distribuye en proporción a las cotizaciones de cada hotel, con base en las 35.531 conversaciones del período.'
+    : 'Cotizaciones de alojamiento generadas por Velma, por hotel y por mes.';
 }
 renderVol('cot');
 var tgBtns = Array.prototype.slice.call(document.querySelectorAll('#tg button'));
